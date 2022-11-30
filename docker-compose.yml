@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  postgres-deutsch:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${DOCKER_POSTGRES_PASSWORD}
+    volumes:
+      - pgdeutsch:/var/lib/postgresql/data
+volumes:
+  pgdeutsch:
